@@ -1,0 +1,16 @@
+CC= g++
+
+CFLAGS= -Wall -Wextra
+
+Target= paradox
+
+all: $(Target)
+
+$(Target):main.o
+	$(CC) $(CFLAGS) -o $(Target) main.o
+
+main.o: main.cpp
+	$(CC) $(CFLAGS) -c main.cpp
+
+clean:
+	$(RM) $(Target) *.o *~
