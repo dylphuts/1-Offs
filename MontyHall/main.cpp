@@ -17,12 +17,12 @@ int main(){
   cin>>cycles;
   cout<<endl;
   drawDoors();
-  random();
+
+  test.assignDoor(test.randomize());
   return 0;
 }
 
 void drawDoors(){
   cout<<"Here are your three doors:"<<endl;
   cout<<"       [1] [2] [3]"<<endl;
-  cout<<"Which door are you choosing?: "<<endl;
 }

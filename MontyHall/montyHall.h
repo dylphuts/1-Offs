@@ -12,7 +12,7 @@ class montyHall{
 
  public:
   int randomize();
-  void assignDoor();
+  void assignDoor(int num);
 
   montyHall();
 };

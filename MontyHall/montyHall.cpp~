@@ -1,6 +1,0 @@
-#include "montyHall.h"
-
-montyHall::montyHall(){
-  cout<<"constuct"<<endl;
-}
-
