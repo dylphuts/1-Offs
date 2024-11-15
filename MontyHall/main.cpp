@@ -25,4 +25,6 @@ int main(){
 void drawDoors(){
   cout<<"Here are your three doors:"<<endl;
   cout<<"       [1] [2] [3]"<<endl;
+
+  cout<<endl;
 }
