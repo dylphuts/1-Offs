@@ -21,6 +21,8 @@ class montyHall{
   void selectDoor();
   void promtSwitch();
   void switchDoor();
+  void showDoors();
+  void loop();
   montyHall();
 };
 

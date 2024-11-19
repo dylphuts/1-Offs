@@ -17,13 +17,13 @@ int montyHall::randomize(){
 }
 
 void montyHall::assignDoor(int num){
-  if(num==1){
+  if(num==1 && door1!="R"){
     door1="C";
   }
-  else if(num==2){
+  else if(num==2 && door2!="R"){
     door2="C";
   }
-  else if (num==3){
+  else if (num==3 && door3!="R"){
     door3="C";
   }
   else {
@@ -68,6 +68,7 @@ void montyHall::promtSwitch(){
   }
   cout<<endl;
   cout<<"lets see the results."<<endl;
+  showDoors();
 }
 
 void montyHall::switchDoor(){
@@ -116,4 +117,9 @@ void montyHall::revealDoor(){
     }
   }
   promtSwitch();
+}
+
+void montyHall::showDoors(){
+  cout << "       ["<<door1<<"] ["<<door2<<"] ["<<door3<<"] "<< endl;
+  x
 }
