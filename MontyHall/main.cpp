@@ -15,9 +15,12 @@ int main(){
   cout<<endl;
   cout<<"How many times should this be played?: ";
   cin>>cycles;
+  test.cycles=cycles;
   cout<<endl;
   drawDoors();
   test.assignDoor(test.randomize());
+  test.selectDoor();
+  test.revealDoor();
   return 0;
 }
 

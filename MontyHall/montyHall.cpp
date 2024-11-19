@@ -10,6 +10,34 @@ montyHall::montyHall(){
   door3="G";
 }
 
+void montyHall::loop(){
+  cout<<"Running all other tests"<<endl;
+  for(int i=0; i<cycles-1;i++){
+    assignDoor(randomize());
+    check();
+  }
+  cout<<"Complete"<<endl;
+  cout<<"Wins: "<<wins<<endl;
+  cout<<"Loses: "<<loses<<endl;
+  average=wins/loses;
+  cout<<"Average: "<<average<<endl;
+}
+
+void montyHall::check(){
+  if(selected=="door1"&&door1=="C"){
+    wins++;
+  }
+  else if(selected=="door2" &&door2=="C"){
+    wins++;
+  }
+  else if(selected=="door3" && door3=="C"){
+    wins++;
+  }
+  else{
+    loses++;
+  }
+}
+
 int montyHall::randomize(){
   srand(static_cast<unsigned>(time(0)));
   int randomNumber= (rand() %3)+1;
@@ -27,10 +55,8 @@ void montyHall::assignDoor(int num){
     door3="C";
   }
   else {
-    cout<<"Error";
+    cout<<"Error in assigndoor"<<endl;
   }
-  selectDoor();
-  revealDoor();
   //cout<<num<<endl;
 }
 
@@ -90,7 +116,7 @@ void montyHall::switchDoor(){
   else if(door3=="R" && selected=="door2"){
     selected="door1";
   }
-  cout<<"your door has been switched"<<endl;
+  cout<<"your door has been switched to "<<selected<<"."<<endl;
 }
 
 void montyHall::revealDoor(){
@@ -121,5 +147,21 @@ void montyHall::revealDoor(){
 
 void montyHall::showDoors(){
   cout << "       ["<<door1<<"] ["<<door2<<"] ["<<door3<<"] "<< endl;
-  x
+  if(selected=="door1"&&door1=="C"){
+    cout<<"You've won lets run the other tests. We will calulate your results"<<endl;
+    wins++;
+  }
+  else if(selected=="door2" &&door2=="C"){
+    cout<<"You've won lets run the other tests. We will calulate your results"<<endl;
+    wins++;
+  }
+  else if(selected=="door3" && door3=="C"){
+    cout<<"You've won lets run the other tests. We will calulate your results"<<endl;
+    wins++;
+  }
+  else{
+    cout<<"That's too bad hopefully you'll win later"<<endl;
+    loses++;
+  }
+  loop();
 }

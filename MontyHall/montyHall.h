@@ -10,11 +10,12 @@ class montyHall{
   string door2="G";
   string door3="G";
   string selected="";
-  int cycles=0;
   int wins=0;
   int loses=0;
 
  public:
+  int cycles=0;
+  float average=0;
   int randomize();
   void assignDoor(int num);
   void revealDoor();
@@ -22,6 +23,7 @@ class montyHall{
   void promtSwitch();
   void switchDoor();
   void showDoors();
+  void check();
   void loop();
   montyHall();
 };
