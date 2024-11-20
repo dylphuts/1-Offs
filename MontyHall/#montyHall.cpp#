@@ -26,19 +26,18 @@ void montyHall::loop(){
 }
 
 void montyHall::check(){
-  cout<<selected<<endl;
-  if(selected=="door1"&&door1=="C"){
+
+  if ((selected == "door1" && door1 == "C") || 
+      (selected == "door2" && door2 == "C") || 
+      (selected == "door3" && door3 == "C")) {
     wins++;
   }
-  else if(selected=="door2" &&door2=="C"){
-    wins++;
-  }
-  else if(selected=="door3" && door3=="C"){
-    wins++;
-  }
-  else{
+  else {
     loses++;
   }
+  door1="G";
+  door2="G";
+  door3="G";
 }
 
 int montyHall::randomize(){
@@ -47,13 +46,13 @@ int montyHall::randomize(){
 }
 
 void montyHall::assignDoor(int num){
-  if(num==1 && door1!="R"){
+  if(num==1){
     door1="C";
   }
-  else if(num==2 && door2!="R"){
+  else if(num==2){
     door2="C";
   }
-  else if (num==3 && door3!="R"){
+  else if (num==3){
     door3="C";
   }
   else {
