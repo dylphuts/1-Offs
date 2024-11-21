@@ -14,14 +14,12 @@ montyHall::montyHall(){
 }
 
 void montyHall::loop(){
-  cout<<"Running all other tests"<<endl;
   for(int i=0; i<cycles;i++){
     assignDoor(randomize());
     revealGoat();
     switchDoor(switchAnswer);
     check();
   }
-  cout<<"Complete"<<endl;
   cout<<"Wins: "<<wins<<endl;
   cout<<"Loses: "<<loses<<endl;
   average=wins/cycles;
