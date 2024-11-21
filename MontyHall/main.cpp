@@ -21,6 +21,7 @@ int main(){
   test.assignDoor(test.randomize());
   test.selectDoor();
   test.promtSwitch();
+  test.loop();
   return 0;
 }
 

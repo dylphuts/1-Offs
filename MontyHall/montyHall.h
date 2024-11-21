@@ -10,6 +10,8 @@ class montyHall{
   string door2="G";
   string door3="G";
   string selected="";
+  string revealedDoor="";
+  string switchAnswer="";
   double wins=0;
   double loses=0;
 
@@ -18,10 +20,10 @@ class montyHall{
   double average;
   int randomize();
   void assignDoor(int num);
-  void revealDoor();
   void selectDoor();
   void promtSwitch();
-  void switchDoor();
+  void revealGoat();
+  void switchDoor(string ans);
   void showDoors();
   void check();
   void loop();

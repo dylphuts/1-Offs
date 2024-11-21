@@ -15,8 +15,10 @@ montyHall::montyHall(){
 
 void montyHall::loop(){
   cout<<"Running all other tests"<<endl;
-  for(int i=0; i<cycles-1;i++){
+  for(int i=0; i<cycles;i++){
     assignDoor(randomize());
+    revealGoat();
+    switchDoor(switchAnswer);
     check();
   }
   cout<<"Complete"<<endl;
@@ -66,6 +68,20 @@ void montyHall::assignDoor(int num){
   //cout<<num<<endl;
 }
 
+void montyHall::switchDoor(string ans) {
+  if(ans=="yes"){
+    if (selected != "door1" && revealedDoor != "door1"){
+      selected = "door1";
+    }
+    else if (selected != "door2" && revealedDoor != "door2"){
+      selected = "door2";
+    }
+    else if (selected != "door3" && revealedDoor != "door3"){
+      selected = "door3";
+    }
+   
+  }
+}
 void montyHall::selectDoor(){
   cout<<"Please select a door via its number: ";
   cin>>selected;
@@ -83,15 +99,16 @@ void montyHall::selectDoor(){
     selectDoor();
   }
 }
-
 void montyHall::promtSwitch(){
-  string answer="";
+  revealGoat();
   cout<<"Would you like to switch or stay with the door you selected? y/n ";
-  cin>>answer;
-  if(answer=="y"||answer=="yes"){
-    switchDoor();
+  cin>>switchAnswer;
+  if(switchAnswer=="y"||switchAnswer=="yes"){
+    switchAnswer="yes";
+    switchDoor(switchAnswer);
   }
-  else if(answer=="n"||answer=="no"){
+  else if(switchAnswer=="n"||switchAnswer=="no"){
+    switchAnswer="no";
     cout<<"you are staying with your original door."<<endl;
   }
   else {
@@ -100,33 +117,17 @@ void montyHall::promtSwitch(){
   }
   cout<<endl;
   cout<<"lets see the results."<<endl;
-  showDoors();
 }
 
-void montyHall::switchDoor(){
-  if(selected=="door1")selected="door2";
-  else if(selected=="door2")selected="door3";
-  else if (selected=="door3")selected="door1";
-  cout<<"Your new door is "<<selected<<endl;
-}
+void montyHall::revealGoat() {
+  if (selected != "door1" && door1 == "G"){
 
-void montyHall::showDoors(){
-  cout << "       ["<<door1<<"] ["<<door2<<"] ["<<door3<<"] "<< endl;
-  if(selected=="door1"&&door1=="C"){
-    cout<<"You've won lets run the other tests. We will calulate your results"<<endl;
-    wins++;
+    revealedDoor = "door1";
   }
-  else if(selected=="door2" &&door2=="C"){
-    cout<<"You've won lets run the other tests. We will calulate your results"<<endl;
-    wins++;
+  else if (selected != "door2" && door2 == "G"){
+    revealedDoor = "door2";
   }
-  else if(selected=="door3" && door3=="C"){
-    cout<<"You've won lets run the other tests. We will calulate your results"<<endl;
-    wins++;
+  else if (selected != "door3" && door3 == "G"){
+    revealedDoor = "door3";
   }
-  else{
-    cout<<"That's too bad hopefully you'll win later"<<endl;
-    loses++;
-  }
-  loop();
 }
