@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 montyHall::montyHall(){
@@ -21,12 +22,12 @@ void montyHall::loop(){
   cout<<"Complete"<<endl;
   cout<<"Wins: "<<wins<<endl;
   cout<<"Loses: "<<loses<<endl;
-  average=wins/loses;
-  cout<<"Average: "<<average<<endl;
+  average=wins/cycles;
+  cout<<"Average: "<<fixed<<setprecision(3)<<average<<endl;
+  cout<<"Percentage: "<<fixed<<setprecision(1)<<average*100<<"%"<<endl;
 }
 
 void montyHall::check(){
-  cout<<selected<<endl;
   if(selected=="door1"&&door1=="C"){
     wins++;
   }
@@ -47,6 +48,9 @@ int montyHall::randomize(){
 }
 
 void montyHall::assignDoor(int num){
+  door1="G";
+  door2="G";
+  door3="G";
   if(num==1 && door1!="R"){
     door1="C";
   }
@@ -100,51 +104,10 @@ void montyHall::promtSwitch(){
 }
 
 void montyHall::switchDoor(){
-  if(door1=="R" && selected=="door2"){
-    selected="door3";
-  }
-  else if (door1=="R" && selected=="door3"){
-    selected="door2";
-  }
-  else if(door2=="R" && selected=="door1"){
-    selected="door3";
-  }
-  else if (door2=="R" && selected=="door3"){
-    selected="door1";
-  }
-  else if(door3=="R" && selected=="door1"){
-    selected="door2";
-  }
-  else if(door3=="R" && selected=="door2"){
-    selected="door1";
-  }
-  cout<<"your door has been switched to "<<selected<<"."<<endl;
-}
-
-void montyHall::revealDoor(){
-  int random;
-  while (true) {
-   random = (rand() % 3) + 1; 
-    if (random == 1 && door1 != "C" && selected!="door1") {
-      cout << "Let's reveal one of our doors." << endl;
-      cout << "       [G] [2] [3]" << endl;
-      door1 = "R";
-      break;
-    } 
-    else if (random == 2 && door2 != "C"&& selected!="door2") {
-      cout << "Let's reveal one of our doors." << endl;
-      cout << "       [1] [G] [3]" << endl;
-      door2 = "R";
-      break;
-    } 
-    else if (random == 3 && door3 != "C"&& selected!="door3") {
-      cout << "Let's reveal one of our doors." << endl;
-      cout << "       [1] [2] [G]" << endl;
-      door3 = "R";
-      break;
-    }
-  }
-  promtSwitch();
+  if(selected=="door1")selected="door2";
+  else if(selected=="door2")selected="door3";
+  else if (selected=="door3")selected="door1";
+  cout<<"Your new door is "<<selected<<endl;
 }
 
 void montyHall::showDoors(){

@@ -20,7 +20,7 @@ int main(){
   drawDoors();
   test.assignDoor(test.randomize());
   test.selectDoor();
-  test.revealDoor();
+  test.promtSwitch();
   return 0;
 }
 
