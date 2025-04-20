@@ -2,15 +2,20 @@
 #define BUBBLE_H
 
 #include <vector>
+#include <string>
+#include <fstream>
+
+using namespace std;
 
 class Bubble {
 private:
-    std::vector<int> arr;
-
+  vector<int> arr;
+  ofstream savefile;
+  
 public:
     Bubble(const std::vector<int>& data); // Correct declaration
     void sort();                          // Optional: sort method
-    void print() const;                   // Optional: print method
+    void print();
 };
 
 #endif

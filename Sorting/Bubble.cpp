@@ -2,9 +2,8 @@
 #include <iostream>
 using namespace std;
 
-Bubble::Bubble(const vector<int>& data) {
-    arr = data;
-}
+Bubble::Bubble(const vector<int>& data)
+    : arr(data), savefile("Bubble_Sort.txt") {}
 
 void Bubble::sort() {
     int n = arr.size();
@@ -17,9 +16,9 @@ void Bubble::sort() {
     }
 }
 
-void Bubble::print() const {
+void Bubble::print() {
     for (int num : arr) {
-        cout << num << " ";
+        savefile << num << endl;
     }
-    cout << endl;
+    cout <<"Bubble Sort Ran" << endl;
 }

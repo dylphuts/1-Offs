@@ -1,19 +1,26 @@
-CC= g++
+CC = g++
+CFLAGS = -Wall -Wextra
+Target = Algorithms
 
-CFLAGS= -Wall -Wextra
-
-Target= Algorithms
+# Object files
+OBJS = main.o Bubble.o Quick.o Merge.o
 
 all: $(Target)
 
-$(Target):main.o Bubble.o
-	$(CC) $(CFLAGS) -o $(Target) main.o Bubble.o
+$(Target): $(OBJS)
+	$(CC) $(CFLAGS) -o $(Target) $(OBJS)
 
-bubble.o: montyHall.cpp Bubble.h
+Bubble.o: Bubble.cpp Bubble.h
 	$(CC) $(CFLAGS) -c Bubble.cpp
 
-main.o: main.cpp Bubble.h
+QuickSort.o: Quick.cpp Quick.h
+	$(CC) $(CFLAGS) -c Quick.cpp
+
+MergeSort.o: Merge.cpp Merge.h
+	$(CC) $(CFLAGS) -c Merge.cpp
+
+main.o: main.cpp Bubble.h Quick.h Merge.h
 	$(CC) $(CFLAGS) -c main.cpp
 
 clean:
-	$(RM) $(Target) *.o *~
+	rm -f $(Target) *.o *~
