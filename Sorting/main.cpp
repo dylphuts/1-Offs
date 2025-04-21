@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include "Bubble.h"
 #include "Quick.h"
+#include "Merge.h"
 #include <vector>
 using namespace std;
 
@@ -28,17 +29,20 @@ int main() {
   }
   Bubble BubRun(arr);
   QuickSort QuickRun(arr);
+  MergeSort MergeRun(arr);
   
   BubRun.sort();
   BubRun.print();
   QuickRun.sort();
   QuickRun.print();
+  MergeRun.sort();
+  MergeRun.print();
   return 0;
 }
 
 void generateNumbers(string name){
   ofstream file(name + ".txt");
-  int size = 100;
+  int size = 10000;
   for(int i = 0; i<size; i++){
     int number = rand() % 1001;
     file<<number<<endl;
