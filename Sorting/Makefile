@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra
 Target = Algorithms
 
 # Object files
-OBJS = main.o Bubble.o Quick.o Merge.o
+OBJS = main.o Bubble.o Quick.o Merge.o Insertion.o
 
 all: $(Target)
 
@@ -13,13 +13,16 @@ $(Target): $(OBJS)
 Bubble.o: Bubble.cpp Bubble.h
 	$(CC) $(CFLAGS) -c Bubble.cpp
 
-QuickSort.o: Quick.cpp Quick.h
+Quick.o: Quick.cpp Quick.h
 	$(CC) $(CFLAGS) -c Quick.cpp
 
-MergeSort.o: Merge.cpp Merge.h
+Merge.o: Merge.cpp Merge.h
 	$(CC) $(CFLAGS) -c Merge.cpp
 
-main.o: main.cpp Bubble.h Quick.h Merge.h
+Insertion.o: Insertion.cpp Insertion.h
+	$(CC) $(CFLAGS) -c Insertion.cpp
+
+main.o: main.cpp Bubble.h Quick.h Merge.h Insertion.h
 	$(CC) $(CFLAGS) -c main.cpp
 
 clean:

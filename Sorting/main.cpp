@@ -5,6 +5,7 @@
 #include "Bubble.h"
 #include "Quick.h"
 #include "Merge.h"
+#include "Insertion.h"
 #include <vector>
 using namespace std;
 
@@ -30,6 +31,7 @@ int main() {
   Bubble BubRun(arr);
   QuickSort QuickRun(arr);
   MergeSort MergeRun(arr);
+  InsertionSort InsertRun(arr);
   
   BubRun.sort();
   BubRun.print();
@@ -37,6 +39,8 @@ int main() {
   QuickRun.print();
   MergeRun.sort();
   MergeRun.print();
+  InsertRun.sort();
+  InsertRun.print();
   return 0;
 }
 
