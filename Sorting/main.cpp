@@ -6,6 +6,7 @@
 #include "Quick.h"
 #include "Merge.h"
 #include "Insertion.h"
+#include "Count.h"
 #include <vector>
 using namespace std;
 
@@ -32,6 +33,7 @@ int main() {
   QuickSort QuickRun(arr);
   MergeSort MergeRun(arr);
   InsertionSort InsertRun(arr);
+  Counting countRun(arr);
   
   BubRun.sort();
   BubRun.print();
@@ -41,6 +43,8 @@ int main() {
   MergeRun.print();
   InsertRun.sort();
   InsertRun.print();
+  countRun.sort();
+  countRun.print();
   return 0;
 }
 
