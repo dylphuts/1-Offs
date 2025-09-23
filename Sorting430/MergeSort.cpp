@@ -63,10 +63,10 @@ void MergeSort::mergeArrays(int start, int midpoint, int end) {
 }
 
 void MergeSort::print(){
-    cout<<"Printing Merge Results";
+    cout<<"Printing Merge Results"<< endl;
     for (int i = 0; i < static_cast<int>(array.size()); i++) {
-    cout << array[i] << " ";
-    if ((i + 1) % 10 == 0) cout << endl;  // print newline after every 10 numbers
-}
+        cout << array[i] << " ";
+        if ((i + 1) % 10 == 0) cout << endl;
+    }
     
 }
