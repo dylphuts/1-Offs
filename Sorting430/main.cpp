@@ -17,18 +17,6 @@ int main(){
     cout<<"Running Sort tests"<<endl;
     vector<int>data;
     generateData(data);
-    MergeSort mergeRun(data);
-    mergeRun.sort();
-    mergeRun.print();
-
-    data.clear();
-    generateData(data);
-    QuickSort quickRun(data);
-    quickRun.sort();
-    quickRun.print();
-
-    data.clear();
-    generateData(data);
     SelectionSortA selectionA(data);
     selectionA.sort();
     selectionA.print();
@@ -39,6 +27,17 @@ int main(){
     selectionB.sort();
     selectionB.print();
     
+    data.clear();
+    generateData(data);
+    MergeSort mergeRun(data);
+    mergeRun.sort();
+    mergeRun.print();
+
+    data.clear();
+    generateData(data);
+    QuickSort quickRun(data);
+    quickRun.sort();
+    quickRun.print();
 }
 
 void generateData(vector<int>& arr) {

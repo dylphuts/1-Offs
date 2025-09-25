@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -Wall -Wextra
 
 main: main.o MergeSort.o QuickSort.o SelectionSortA.o SelectionSortB.o
-	$(CC) $(CFLAGS) -o main main.o MergeSort.o QuickSort.o SelectionSortA.o SelectionSortB.o
+	$(CC) $(CFLAGS) -o sortingAlgorithems main.o MergeSort.o QuickSort.o SelectionSortA.o SelectionSortB.o
 
 main.o: main.cpp MergeSort.h
 	$(CC) $(CFLAGS) -c main.cpp
