@@ -8,6 +8,10 @@
 #include "SelectionSortA.h"
 #include "SelectionSortB.h"
 #include "InsertionSort.h"
+#include "BubbleSortA.h"
+#include "BubbleSortB.h"
+#include <ctime> // for time()
+
 
 
 using namespace std; 
@@ -15,6 +19,8 @@ using namespace std;
 void generateData(vector<int>& arr);
 
 int main(){
+    srand(static_cast<unsigned int>(time(0))); // seed rand
+
     cout<<"Running Sort tests"<<endl;
     vector<int>data;
     generateData(data);
@@ -45,6 +51,18 @@ int main(){
     InsertionSort insertRun(data);
     insertRun.sort();
     insertRun.print();
+
+    data.clear();
+    generateData(data);
+    BubbleSortA bubbleARun(data);
+    bubbleARun.sort();
+    bubbleARun.print();
+    
+    data.clear();
+    generateData(data);
+    BubbleSortB bubbleBRun(data);
+    bubbleBRun.sort();
+    bubbleBRun.print();
 }
 
 void generateData(vector<int>& arr) {
