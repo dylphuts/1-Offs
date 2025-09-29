@@ -1,8 +1,8 @@
 CC = g++
 CFLAGS = -Wall -Wextra
 
-main: main.o MergeSort.o QuickSort.o SelectionSortA.o SelectionSortB.o
-	$(CC) $(CFLAGS) -o sortingAlgorithems main.o MergeSort.o QuickSort.o SelectionSortA.o SelectionSortB.o
+main: main.o MergeSort.o QuickSort.o SelectionSortA.o SelectionSortB.o InsertionSort.o
+	$(CC) $(CFLAGS) -o sortingAlgorithems main.o MergeSort.o QuickSort.o SelectionSortA.o SelectionSortB.o InsertionSort.o
 
 main.o: main.cpp MergeSort.h
 	$(CC) $(CFLAGS) -c main.cpp
@@ -19,6 +19,8 @@ SelectionSortA.o: SelectionSortA.cpp SelectionSortA.h
 SelectionSortB.o: SelectionSortB.cpp SelectionSortB.h
 	$(CC) $(CFLAGS) -c SelectionSortB.cpp
 
+InsertionSort.o: InsertionSort.cpp InsertionSort.h
+	$(CC) $(CFLAGS) -c InsertionSort.cpp
 
 clean:
-	rm -f main *.o *~ testData.txt
+	rm -f main *.o *~ testData.txt sortingAlgorithems

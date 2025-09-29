@@ -7,6 +7,7 @@
 #include "Quicksort.h"
 #include "SelectionSortA.h"
 #include "SelectionSortB.h"
+#include "InsertionSort.h"
 
 
 using namespace std; 
@@ -38,6 +39,12 @@ int main(){
     QuickSort quickRun(data);
     quickRun.sort();
     quickRun.print();
+
+    data.clear();
+    generateData(data);
+    InsertionSort insertRun(data);
+    insertRun.sort();
+    insertRun.print();
 }
 
 void generateData(vector<int>& arr) {
