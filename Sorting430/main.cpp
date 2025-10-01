@@ -12,6 +12,7 @@
 #include "BubbleSortB.h"
 #include "BubbleSortC.h"
 #include "CountingSort.h"
+#include "RadixSort.h"
 #include <ctime> // for time()
 
 
@@ -77,6 +78,12 @@ int main(){
     CountingSort CountRun(data);
     CountRun.sort();
     CountRun.print();
+    
+    data.clear();
+    generateData(data);
+    RadixSort RadixRun(data);
+    RadixRun.sort();
+    RadixRun.print();
 }
 
 void generateData(vector<int>& arr) {
