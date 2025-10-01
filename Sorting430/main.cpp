@@ -10,6 +10,8 @@
 #include "InsertionSort.h"
 #include "BubbleSortA.h"
 #include "BubbleSortB.h"
+#include "BubbleSortC.h"
+#include "CountingSort.h"
 #include <ctime> // for time()
 
 
@@ -63,6 +65,18 @@ int main(){
     BubbleSortB bubbleBRun(data);
     bubbleBRun.sort();
     bubbleBRun.print();
+    
+    data.clear();
+    generateData(data);
+    BubbleSortC bubbleCRun(data);
+    bubbleCRun.sort();
+    bubbleCRun.print();
+    
+    data.clear();
+    generateData(data);
+    CountingSort CountRun(data);
+    CountRun.sort();
+    CountRun.print();
 }
 
 void generateData(vector<int>& arr) {
